@@ -19,10 +19,10 @@ const menus = [
     title: "Services",
     link: "#",
     submenu: [
-      { id: 1, title: "Mobile Application", link: "/services/mobile-application" },
-      { id: 2, title: "Web Development", link: "/services/web-development" },
-      { id: 3, title: "Software Development", link: "/services/software-development" },
-      { id: 4, title: "Digital Marketing", link: "/services/digital-marketing" },
+      { id: 1, title: "Mobile Application", link: "/services?category=Mobile%20Application" },
+      { id: 2, title: "Web Development", link: "/services?category=Web%20Development" },
+      { id: 3, title: "Software Development", link: "/services?category=Software%20Development" },
+      { id: 4, title: "Digital Marketing", link: "/services?category=Digital%20Marketing" },
     ],
   },
   {

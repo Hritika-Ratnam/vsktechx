@@ -118,9 +118,9 @@ import { services } from '@/data/services';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Services = ({ isSlider = true, showTitle = true, extraClassName='', showHeading = false, showDropdown = true }) => {
+const Services = ({ isSlider = true, showTitle = true, extraClassName='', showHeading = false, showDropdown = true, selectedCategory = null }) => {
   const swiperRef = useRef(null);
-  const [selectedService, setSelectedService] = useState("");
+  const [selectedService, setSelectedService] = useState(selectedCategory || "");
 
   useEffect(() => {
     if (isSlider && swiperRef.current) {
@@ -130,6 +130,13 @@ const Services = ({ isSlider = true, showTitle = true, extraClassName='', showHe
       swiperRef.current.swiper.navigation.update();
     }
   }, [isSlider]);
+
+  // Update selectedService when selectedCategory prop changes
+  useEffect(() => {
+    if (selectedCategory) {
+      setSelectedService(selectedCategory);
+    }
+  }, [selectedCategory]);
 
   // Filter services based on dropdown selection
   const filteredServices = selectedService

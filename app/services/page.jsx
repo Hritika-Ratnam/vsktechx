@@ -1,3 +1,5 @@
+"use client";
+import { useSearchParams } from 'next/navigation';
 import MessagesTwo from "@/components/containers/home-two/MessagesTwo";
 //import Cta from "@/components/containers/home/Cta";
 //import Faq from "@/components/containers/home/Faq";
@@ -8,14 +10,25 @@ import Header from "@/components/layout/header/Header"
 import PageHeader from "@/components/layout/PageHeader";
 
 const page = () => {
+  const searchParams = useSearchParams();
+  const category = searchParams.get('category');
+  
   const breadcrumbs = [
     { label: '', link: '/' },
     { label: '', link: null }
   ];
+  
   return (
     <>
       <Header/>
-    <Services isSlider={false} showTitle={false} showHeading={true} extraClassName="style2 mt-5"/>
+      <Services 
+        isSlider={false} 
+        showTitle={false} 
+        showHeading={true} 
+        showDropdown={true}
+        selectedCategory={category}
+        extraClassName="style2 mt-5"
+      />
       {/* <Cta/> */}
       {/* <Faq extraClassName="style2"/> */}
       
