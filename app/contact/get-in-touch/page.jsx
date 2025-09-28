@@ -31,7 +31,7 @@ const GetInTouchDetails = () => {
   const [logos, setLogos] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/logos')
+    fetch('https://backend-vsktechx.onrender.com/api/logos')
       .then(res => res.json())
       .then(data => setLogos(data.data || []))
       .catch(() => setLogos([]));

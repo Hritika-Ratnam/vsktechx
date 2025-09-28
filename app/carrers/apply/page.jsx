@@ -48,7 +48,7 @@ const ApplyPage = () => {
     });
 
     try {
-      const response = await fetch("http://localhost:3001/api/apply", {
+      const response = await fetch("https://backend-vsktechx.onrender.com/api/apply", {
         method: "POST",
         body: formData,
       });
